@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-gradient-to-r from-blue-500 to-green-400 min-h-screen flex flex-col items-center justify-center">
+    <div class="bg-gradient-to-r from-pink-500 to-violet-500 text-white p-4 text-center text-xl font-bold rounded">
+        Welcome to The Register Page!
+    </div>
+
+  <div class="mt-6 w-full max-w-md">
+    {% load widget_tweaks %}
+    <form method="POST" class="p-6 bg-white rounded-xl shadow flex flex-col gap-4">
+      {% csrf_token %}
+
+      <div>
+        {{ form.username.label_tag }}
+        {{ form.username|add_class:"border rounded px-2 py-1 w-full" }}
+      </div>
+
+      <div>
+        {{ form.email.label_tag }}
+        {{ form.email|add_class:"border rounded px-2 py-1 w-full" }}
+      </div>
+
+      <div>
+        {{ form.password1.label_tag }}
+        {{ form.password1|add_class:"border rounded px-2 py-1 w-full" }}
+      </div>
+
+      <div>
+        {{ form.password2.label_tag }}
+        {{ form.password2|add_class:"border rounded px-2 py-1 w-full" }}
+      </div>
+
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Register
+      </button>
+
+      {% for message in messages %}
+        <p class="text-red-500 mt-2">{{ message }}</p>
+      {% endfor %}
+    </form>
+  </div>
+</div>
+  </body>
+</html>

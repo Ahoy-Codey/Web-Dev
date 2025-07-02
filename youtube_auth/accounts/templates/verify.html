@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+  <div class="bg-gradient-to-r from-blue-500 to-green-400 min-h-screen flex flex-col items-center justify-center">
+    <div class="max-w-md mx-auto mt-20 p-6 bg-white rounded shadow text-center">
+  <h2 class="text-xl text-green-600 font-semibold">{{ message }}</h2>
+  <a href="{% url 'login' %}" class="text-blue-600 underline block mt-4">Login</a>
+  </div>
+</div>  
+</body>
+</html>
+
+
+
